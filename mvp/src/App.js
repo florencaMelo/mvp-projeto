@@ -1,10 +1,10 @@
 import './App.css';
-import CampoTexto from './Componentes/CampoTexto';
+import Formulario from './Componentes/Formulario';
 
 function App() {
   return (
     <div className="App">
-      <CampoTexto texto="Digite seu nome"/>
+      <Formulario/>
     </div>
   );
 }

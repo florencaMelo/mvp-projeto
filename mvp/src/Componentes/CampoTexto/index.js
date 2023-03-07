@@ -6,8 +6,6 @@ const CampoTexto = (props) => {
       <label>{props.texto}</label>
       <input></input>
     </div>
-    
-    
   )
 }
 
