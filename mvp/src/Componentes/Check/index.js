@@ -1,11 +1,14 @@
 import "./Check.css"
 
-const Check = () => {
+const Check = (props) => {
   return(
     <div>
-      <label></label>
-      <input type="checkbox"></input>
-      
+      <label>{props.texto}</label>
+      <select>
+        <option>Moto</option>
+        <option>Bicicleta</option>
+        <option>Nenhum</option>
+      </select>
     </div>
   )
 }
