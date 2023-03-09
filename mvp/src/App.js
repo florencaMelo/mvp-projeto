@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      <Formulario/>
       <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorCadastrado(colaborador)}/>
     </div>
   );
