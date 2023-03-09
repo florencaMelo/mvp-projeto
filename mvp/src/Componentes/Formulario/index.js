@@ -5,7 +5,7 @@ import "./Formulario.css"
 import { useState } from "react"
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
   const [nome, setNome] = useState("")
   const [idade, setIdade] = useState("")
@@ -14,20 +14,26 @@ const Formulario = () => {
 
   const AoSalvar = (evento) => {
     evento.preventDefault()
-    console.log
+    /* console.log("Formulário foi submetido", nome, idade, email, alternativa) */
+    props.aoColaboradorCadastrado({
+      nome : nome,
+      idade : idade, 
+      email : email,
+      alternativa : alternativa
+    })
   }
 
   return(
     <section>
       <form onSubmit={AoSalvar}>
-        <CampoTexto texto="Digite seu nome"/>
-        <CampoTexto texto="Digite sua idade"/>
-        <CampoTexto texto="Digite seu email" AoAlterado={valor => setEmail(valor)}/> 
-        <Check texto="Selecione uma das alternativas"/>
+        <CampoTexto texto="Digite seu nome" AoAlterado={valor => setNome(valor)} placeholder="Nome"/>
+        <CampoTexto texto="Digite sua idade" AoAlterado={valor => setIdade(valor)} placeholder="Idade"/>
+        <CampoTexto texto="Digite seu email" AoAlterado={valor => setEmail(valor)} placeholder="Email"/> 
+        <Check valor={alternativa} texto="Selecione uma das alternativas" AoAlterado={valor => setAlternativa(valor)}/>
         <Botao/>
       </form>
     </section>
   )
 }
 
-export default Formulario
+export default Formulario 
